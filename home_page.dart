@@ -13,24 +13,28 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Numero de beijinhos que devo pro meu amor:'),
-      ),
-      body: Center(
-          child: GestureDetector(
-        child: Text(
-          '(Leia a barra do site): $counter',
-          style: TextStyle(fontSize: 35),
+        appBar: AppBar(
+          title: Text('Menu Principal'),
+          backgroundColor: Colors.purple,
         ),
-      )),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          setState(() {
-            counter++;
-          });
-        },
-      ),
-    );
+        body: Center(
+          child: TextButton(
+            style: TextButton.styleFrom(
+                backgroundColor: Colors.purple,
+                elevation: 15,
+                shadowColor: Colors.black),
+            child: Text(
+                'Clicável '
+                '$counter',
+                style: TextStyle(
+                  color: Colors.white,
+                )),
+            onPressed: () {
+              setState(() {
+                counter++;
+              });
+            },
+          ),
+        ));
   }
 }

@@ -12,7 +12,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         primaryColor: Colors.purple,
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
       ),
       home: HomePage(),
     );
