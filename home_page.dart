@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projeto1/app_controller.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -17,24 +18,44 @@ class HomePageState extends State<HomePage> {
           title: Text('Menu Principal'),
           backgroundColor: Colors.purple,
         ),
-        body: Center(
-          child: TextButton(
-            style: TextButton.styleFrom(
-                backgroundColor: Colors.purple,
-                elevation: 15,
-                shadowColor: Colors.black),
-            child: Text(
-                'Clicável '
-                '$counter',
-                style: TextStyle(
-                  color: Colors.white,
-                )),
-            onPressed: () {
-              setState(() {
-                counter++;
-              });
-            },
-          ),
-        ));
+        body: Container(
+            width: double.infinity,
+            height: double.infinity,
+            child: Column(
+              children: [
+                CustomSwitcher(),
+                TextButton(
+                  style: TextButton.styleFrom(
+                      backgroundColor: Colors.purple,
+                      elevation: 15,
+                      shadowColor: Colors.black),
+                  child: Text('Clicável ',
+                      style: TextStyle(
+                        color: Colors.white,
+                      )),
+                  onPressed: () {
+                    setState(() {
+                      counter++;
+                    });
+                  },
+                ),
+                Text('Contador:' '$counter',
+                    style: TextStyle(
+                      fontSize: 50,
+                    )),
+              ],
+            )));
+  }
+}
+
+class CustomSwitcher extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+      value: AppController.instance.isDartTheme,
+      onChanged: (value) {
+        AppController.instance.changeTheme();
+      },
+    );
   }
 }
