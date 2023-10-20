@@ -22,8 +22,13 @@ class HomePageState extends State<HomePage> {
             width: double.infinity,
             height: double.infinity,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 CustomSwitcher(),
+                Text('Contador:' '$counter',
+                    style: TextStyle(
+                      fontSize: 50,
+                    )),
                 TextButton(
                   style: TextButton.styleFrom(
                       backgroundColor: Colors.purple,
@@ -39,10 +44,15 @@ class HomePageState extends State<HomePage> {
                     });
                   },
                 ),
-                Text('Contador:' '$counter',
-                    style: TextStyle(
-                      fontSize: 50,
-                    )),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 50,
+                      height: 50,
+                    )
+                  ],
+                )
               ],
             )));
   }
