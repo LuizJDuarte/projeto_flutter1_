@@ -15,7 +15,9 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Menu Principal'),
+          title: Center(
+            child: Text('Menu Principal'),
+          ),
           backgroundColor: Colors.purple,
         ),
         body: Container(
